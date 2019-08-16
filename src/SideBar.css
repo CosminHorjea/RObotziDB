@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
 .sideBar {
-      background-color: white;
+      background-color: #DA1F26;
       position: sticky;
       height: 100vh;
       top: 0;
+      font-family: 'Montserrat',Helvetica,Arial;
+}
+.main-title{
+      color: white;
+      font-weight: 600;
+      padding: 0.5em;
+      font-size: 4em;
+}
+.season-list{
+      list-style-type: none;
+      font-weight: 600;
+      font-size: 3em;
+      cursor: pointer;
 }
