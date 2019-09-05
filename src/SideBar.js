@@ -23,8 +23,6 @@ class SideBar extends React.Component {
       constructor(props) {
             super(props);
             this.state = { date: new Date(), isToggleOn: false };
-            this.handleClick = this.handleClick.bind(this);
-
       }
       componentDidMount() {
             this.timerID = setInterval(
@@ -48,16 +46,27 @@ class SideBar extends React.Component {
 
       }
       render() {
+            var changeSeason = this.props.onSeasonChange;
             return (
                   <div className="sideBar">
                         <div className="inneR">
                               <h1 className="main-title"><b>RObotziDB</b></h1>
                               <ul className="season-list">
-                                    <li>Season I</li>
-                                    <li>Season II</li>
-                                    <li>Season III</li>
-                                    <li>Season IV</li>
-                                    <li>Season V</li>
+                                    <li onClick={()=>{
+                                          changeSeason(1)
+                                    }}>Season I</li>
+                                    <li onClick={()=>{
+                                          changeSeason(2)
+                                    }}>Season II</li>
+                                    <li onClick={()=>{
+                                          changeSeason(3)
+                                    }}>Season III</li>
+                                    <li onClick={()=>{
+                                          changeSeason(4)
+                                    }}>Season IV</li>
+                                    <li onClick={()=>{
+                                          changeSeason(5)
+                                    }}>Season V</li>
                               </ul>
                         </div>
                   </div>

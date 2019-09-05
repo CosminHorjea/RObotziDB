@@ -1,13 +1,13 @@
 .Episode{
-    width:auto;
+    width:300px;
     height:auto;
 }
 .Episode >a> img{
     width: 18rem;
 }
 .Episode > .title{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: 'Montserrat';
     font-weight: 600;
-    letter-spacing: 0.2ch
+    /* letter-spacing: 0.2ch */
 }
