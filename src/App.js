@@ -28,7 +28,7 @@ class App extends React.Component {
         this.setState((state)=>{
           state.episodes.push(res.items);
         })
-      ) 
+      ); 
   }
   async componentDidMount(){
     //this for S0.1 episodes
@@ -44,11 +44,11 @@ class App extends React.Component {
     //   this.getEpisodes(e);
     //   console.log(1);
     // });
-    await this.getEpisodes('PLllaRC97fgczIkal5pcRZDKDvqHbsDqRw')
-    await this.getEpisodes('PLllaRC97fgcxaq6Vu2zN9GxYh3Gckmj9k')
-    await this.getEpisodes('PLllaRC97fgcyax2Yrwb0f6FiLi-WUQSQq')
-    await this.getEpisodes('PLllaRC97fgcxlkrlCO5T3PCambA9s3Cz9')
-    await this.getEpisodes('PLllaRC97fgcxMDrr4jY9YuBVxyf5d9o3O')
+    await this.getEpisodes('PLllaRC97fgczIkal5pcRZDKDvqHbsDqRw');
+    await this.getEpisodes('PLllaRC97fgcxaq6Vu2zN9GxYh3Gckmj9k');
+    await this.getEpisodes('PLllaRC97fgcyax2Yrwb0f6FiLi-WUQSQq');
+    await this.getEpisodes('PLllaRC97fgcxlkrlCO5T3PCambA9s3Cz9');
+    await this.getEpisodes('PLllaRC97fgcxMDrr4jY9YuBVxyf5d9o3O');
     this.changeSeason(1);
   }
 
@@ -58,8 +58,11 @@ class App extends React.Component {
       season:arg,
     },
     this.renderEpisodes
-    )
+    );
     
+  }
+  prepareTitle(source){
+    return source.replace("."," ");
   }
   
   render() {
@@ -68,8 +71,8 @@ class App extends React.Component {
     let aux = this.state.episodes[season];
     // console.log(this.state.episodes);
     const episodeRendered = (aux) ? aux.map((e)=>(
-      <div>
-        <Episode thumbnail={e.snippet.thumbnails.high.url} title={e.snippet.title} />
+      <div key = {e.snippet.resourceId.videoId}>
+        <Episode thumbnail={e.snippet.thumbnails.high.url} title={e.snippet.title} videoId={e.snippet.resourceId.videoId}/>
       </div>
     )) : "Loading";
     // let seasons = this.state.episodes;

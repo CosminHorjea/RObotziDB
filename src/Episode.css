@@ -4,10 +4,21 @@
 }
 .Episode >a> img{
     width: 18rem;
+    transition: all 0.4s;
+}
+.Episode>a>.img::before{
+    content: "Testing"
 }
 .Episode > .title{
     font-size: 1rem;
     font-family: 'Montserrat';
     font-weight: 600;
     /* letter-spacing: 0.2ch */
+}
+.Episode:hover a>img{
+    filter: blur(2px);
+}
+.playArrow{
+    color: white;
+    background-color: white;
 }
